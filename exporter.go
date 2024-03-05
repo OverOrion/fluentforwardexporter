@@ -1,7 +1,7 @@
 // Copyright The OpenTelemetry Authors
 // SPDX-License-Identifier: Apache-2.0
 
-package fluentforwardexporter // import "github.com/r0mdau/fluentforwardexporter"
+package fluentforwardexporter // import "github.com/overorion/fluentforwardexporter"
 
 import (
 	"context"

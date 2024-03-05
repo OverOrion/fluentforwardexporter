@@ -1,18 +1,19 @@
 // Copyright The OpenTelemetry Authors
 // SPDX-License-Identifier: Apache-2.0
 
-package fluentforwardexporter // import "github.com/r0mdau/fluentforwardexporter"
+package fluentforwardexporter // import "github.com/overorion/fluentforwardexporter"
 
 import (
 	"context"
 	"time"
 
 	"go.opentelemetry.io/collector/component"
+	"go.opentelemetry.io/collector/config/configretry"
 	"go.opentelemetry.io/collector/config/configtls"
 	"go.opentelemetry.io/collector/exporter"
 	"go.opentelemetry.io/collector/exporter/exporterhelper"
 
-	"github.com/r0mdau/fluentforwardexporter/internal/metadata"
+	"github.com/overorion/fluentforwardexporter/internal/metadata"
 )
 
 // NewFactory creates a factory for the fluentforward exporter.
@@ -52,7 +53,7 @@ func createDefaultConfig() component.Config {
 			"job":      true,
 			"instance": true,
 		},
-		RetrySettings: exporterhelper.NewDefaultRetrySettings(),
+		BackOffConfig: configretry.NewDefaultBackOffConfig(),
 		QueueSettings: exporterhelper.NewDefaultQueueSettings(),
 	}
 }
@@ -68,7 +69,7 @@ func createLogsExporter(ctx context.Context, set exporter.CreateSettings, config
 		exp.pushLogData,
 		// explicitly disable since we rely on net.Dialer timeout logic.
 		exporterhelper.WithTimeout(exporterhelper.TimeoutSettings{Timeout: 0}),
-		exporterhelper.WithRetry(exporterConfig.RetrySettings),
+		exporterhelper.WithRetry(exporterConfig.BackOffConfig),
 		exporterhelper.WithQueue(exporterConfig.QueueSettings),
 		exporterhelper.WithStart(exp.start),
 		exporterhelper.WithShutdown(exp.stop),
