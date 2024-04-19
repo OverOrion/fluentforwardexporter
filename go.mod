@@ -3,7 +3,7 @@ module github.com/overorion/fluentforwardexporter
 go 1.20
 
 require (
-	github.com/IBM/fluent-forward-go v0.2.2
+	github.com/IBM/fluent-forward-go v0.2.3-0.20240418091724-720f8df4306a
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/stretchr/testify v1.8.4
 	go.opentelemetry.io/collector/component v0.94.0
@@ -35,13 +35,13 @@ require (
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/philhofer/fwd v1.1.1 // indirect
+	github.com/philhofer/fwd v1.1.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.18.0 // indirect
 	github.com/prometheus/client_model v0.5.0 // indirect
 	github.com/prometheus/common v0.46.0 // indirect
 	github.com/prometheus/procfs v0.12.0 // indirect
-	github.com/tinylib/msgp v1.1.6 // indirect
+	github.com/tinylib/msgp v1.1.9 // indirect
 	go.opentelemetry.io/collector v0.94.0 // indirect
 	go.opentelemetry.io/collector/config/configopaque v0.94.0 // indirect
 	go.opentelemetry.io/collector/config/configretry v0.94.0 // indirect
@@ -55,8 +55,8 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.23.0 // indirect
 	go.opentelemetry.io/otel/trace v1.23.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/net v0.20.0 // indirect
-	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240102182953-50ed04b92917 // indirect
 	google.golang.org/grpc v1.61.0 // indirect
